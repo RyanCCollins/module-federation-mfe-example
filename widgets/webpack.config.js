@@ -9,7 +9,7 @@ module.exports = {
   mode: "development",
   devServer: {
     contentBase: path.join(__dirname, "dist"),
-    port: 3002,
+    port: 3003,
     historyApiFallback: true,
     hot: false,
     hotOnly: false,
@@ -51,13 +51,12 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "about",
+      name: "widgets",
       filename: "remoteEntry.js",
-      remotes: {
-        shell: "shell@http://localhost:3000/remoteEntry.js",
-      },
+      remotes: {},
       exposes: {
-        "./About": "./src/About",
+        "./WelcomeWidget": "./src/WelcomeWidget",
+        "./ChartWidget": "./src/ChartWidget",
       },
       shared: [
         {

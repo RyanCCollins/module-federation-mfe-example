@@ -51,7 +51,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "dashboard",
       filename: "remoteEntry.js",
-      remotes: {},
+      remotes: {
+        widgets: "widgets@http://localhost:3003/remoteEntry.js",
+      },
       exposes: {
         "./Dashboard": "./src/Dashboard",
       },

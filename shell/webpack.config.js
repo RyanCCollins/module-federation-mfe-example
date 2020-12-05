@@ -59,6 +59,7 @@ module.exports = {
       },
       exposes: {
         "./AppShell": "./src/AppShell",
+        "./SharedButton": "./src/SharedButton"
       },
       shared: [
         {
