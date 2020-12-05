@@ -8,7 +8,7 @@ const About = React.lazy(() => import("about/About"));
 const AppShell = () => (
   <Grommet theme={grommet} full={true}>
     <Navigation />
-    <Box fill pad="small">
+    <Box pad="medium">
       <BrowserRouter>
         <React.Suspense fallback={<div>Loading...</div>}>
           <Routes>
