@@ -1,4 +1,3 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { container: { ModuleFederationPlugin } } = require("webpack");
 const path = require("path");
 const deps = require("./package.json").dependencies;
@@ -52,10 +51,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "dashboard",
       filename: "remoteEntry.js",
-      remotes: {
-        dashboard: "dashboard@http://localhost:3001/remoteEntry.js",
-        shell: "shell@http://localhost:3000/remoteEntry.js",
-      },
+      remotes: {},
       exposes: {
         "./Dashboard": "./src/Dashboard",
       },
@@ -84,9 +80,6 @@ module.exports = {
           },
         },
       ],
-    }),
-    new HtmlWebpackPlugin({
-      template: "./public/index.html",
     }),
   ],
 };

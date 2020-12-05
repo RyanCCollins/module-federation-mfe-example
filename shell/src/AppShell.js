@@ -1,4 +1,4 @@
-import { Grommet, grommet } from "grommet";
+import { Grommet, Box, grommet } from "grommet";
 import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Navigation from "./Navigation";

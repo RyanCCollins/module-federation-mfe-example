@@ -1,5 +1,6 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { container: { ModuleFederationPlugin } } = require("webpack");
+const {
+  container: { ModuleFederationPlugin },
+} = require("webpack");
 const path = require("path");
 const deps = require("./package.json").dependencies;
 
