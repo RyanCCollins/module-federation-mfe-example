@@ -1,0 +1,19 @@
+{
+  "name": "mfe-exploration",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": "true",
+  "scripts": {
+    "install": "lerna bootstrap",
+    "start": "lerna run --parallel start",
+    "build": "lerna run build",
+    "serve": "lerna run --parallel serve",
+    "clean": "lerna run --parallel clean"
+  },
+  "workspaces": [
+    "./*"
+  ],
+  "devDependencies": {
+    "lerna": "3.22.1"
+  }
+}
