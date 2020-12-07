@@ -4,7 +4,7 @@
 ## Getting Started
 1. Run `yarn bootstrap` to bootstrap the project
 1. Run `yarn start` to get the dev server started
-1. Visit `http://localhost:3000` in your browser to view the shell application
+1. Visit `http://localhost:3000` in your browser to view the shell application. NOTE: each module will be running on a separate port, check each webpack config for details.
 
 ## About
 This example shows using Webpack 5 Module Federation to route between multiple micro frontends.
