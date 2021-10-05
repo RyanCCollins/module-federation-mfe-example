@@ -1,17 +1,18 @@
-import React from "react";
 import {
+  Box,
+  Button,
   Card,
-  CardHeader,
   CardBody,
   CardFooter,
-  Stack,
+  CardHeader,
   Chart,
-  Button,
+  Stack,
   Text,
-  Box,
 } from "grommet";
-import { ShareOption } from "grommet-icons";
+import { ShareOption, Wifi } from "grommet-icons";
 import PropTypes from "prop-types";
+import React from "react";
+import Identifier from "./Identifier";
 
 const mockData = Array(30)
   .fill()
@@ -21,8 +22,9 @@ const mockData = Array(30)
     };
   });
 
-const capacityWarnings = mockData.filter((datum) => datum.value[1] >= 50)
-  .length;
+const capacityWarnings = mockData.filter(
+  (datum) => datum.value[1] >= 50
+).length;
 
 const gradient = [
   { value: 0, color: "status-ok" },
@@ -33,12 +35,18 @@ const gradient = [
 
 const ChartWidget = () => {
   return (
-    <Card height="medium" width="medium" background="light-1">
-      <CardHeader pad="medium">KPIs</CardHeader>
-      <CardBody>
+    <Card height="medium" width="medium">
+      <CardHeader pad="medium">
+        <Identifier
+          title="Network Traffic"
+          subtitle="Utilization - Last 30 Days"
+          icon={<Wifi color="text-strong" size="large" />}
+        />
+      </CardHeader>
+      <CardBody margin={{ top: "small" }}>
         <KPIChart id="metric-0" data={mockData} />
       </CardBody>
-      <CardFooter pad="small" background="light-2">
+      <CardFooter background="light-3" align="center" pad="small">
         <KPISummary instances={capacityWarnings} statusColor="status-warning" />
         <Button icon={<ShareOption color="plain" />} hoverIndicator />
       </CardFooter>
@@ -53,7 +61,7 @@ const KPIChart = ({ data, ...rest }) => (
       thickness="xxsmall"
       values={data}
       color="light-3"
-      size={{ height: "240px" }}
+      size={{ height: "small" }}
       {...rest}
     />
     <Chart
@@ -62,7 +70,7 @@ const KPIChart = ({ data, ...rest }) => (
       thickness="xxsmall"
       values={data}
       color={gradient}
-      size={{ height: "240px" }}
+      size={{ height: "small" }}
       {...rest}
     />
   </Stack>

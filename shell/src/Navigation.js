@@ -1,13 +1,11 @@
+import { Box, RoutedAnchor as Anchor, Text } from "grommet";
 import React from "react";
-import { Box, Text, RoutedAnchor as Anchor } from "grommet";
-
-import Element from "./Element";
 
 const Navigation = () => {
   return (
     <Box
       justify="between"
-      pad={{ horizontal: "medium" }}
+      pad="medium"
       background="white"
       direction="row"
       elevation="small"
@@ -15,7 +13,6 @@ const Navigation = () => {
       <Box fill="horizontal" direction="row" align="center" justify="between">
         <Anchor path="/">
           <Box direction="row" align="center">
-            <Element width={75} height={75} />
             <Box
               direction="row"
               gap="xsmall"

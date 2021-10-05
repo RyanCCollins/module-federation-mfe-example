@@ -55,7 +55,7 @@ module.exports = {
       filename: "remoteEntry.js",
       remotes: {},
       exposes: {
-        "./WelcomeWidget": "./src/WelcomeWidget",
+        "./AvailabilityCard": "./src/AvailabilityCard",
         "./ChartWidget": "./src/ChartWidget",
       },
       shared: [

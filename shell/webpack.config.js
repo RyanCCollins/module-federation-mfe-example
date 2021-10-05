@@ -1,5 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { container: { ModuleFederationPlugin } } = require("webpack");
+const {
+  container: { ModuleFederationPlugin },
+} = require("webpack");
 const path = require("path");
 const deps = require("./package.json").dependencies;
 
@@ -8,6 +10,7 @@ module.exports = {
   mode: "development",
   devServer: {
     contentBase: path.join(__dirname, "dist"),
+    open: true,
     port: 3000,
     historyApiFallback: true,
     hot: false,
@@ -59,7 +62,7 @@ module.exports = {
       },
       exposes: {
         "./AppShell": "./src/AppShell",
-        "./SharedButton": "./src/SharedButton"
+        "./SharedButton": "./src/SharedButton",
       },
       shared: [
         {
